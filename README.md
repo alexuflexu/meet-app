@@ -39,10 +39,10 @@
 
 ## Feature 3: Specify Number of Events
 
-### Scenario 1: When user hasn't specified a number, 32 is the default number
+### Scenario 1: When user hasn't specified a number, 10 is the default number
 - **Given** the user has not specified a number of events to display  
 - **When** the user views the event list  
-- **Then** 32 events should be displayed by default  
+- **Then** 10 events should be displayed by default  
 
 ### Scenario 2: User can change the number of events they want to see
 - **Given** the user is on the main page  
