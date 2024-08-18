@@ -102,4 +102,4 @@ So that I can easily understand event trends and distributions across cities.
 ### Scenario 1: Show a chart with the number of upcoming events in each city
 - **Given** the user is on the events page  
 - **When** the user selects the option to view event statistics  
-- **Then** a chart should be displayed showing the number of upcoming events in each city 
+- **Then** a chart should be displayed showing the number of upcoming events in each city
