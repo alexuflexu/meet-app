@@ -1,7 +1,13 @@
-# Meet App
+# Meet App 
+
+Meet App helps users discover and manage events in various cities. It allows users to filter events by city, view and hide event details, and specify the number of events displayed. The app also functions offline, providing access to cached data, and allows users to add a shortcut to their home screen for quick access. Additionally, it features charts to visualize event data, enhancing user understanding of trends.
 
 
 ## Feature 1: Filter Events By City
+
+As a user,
+I should be able to filter events by city
+So that I can see a list of events taking place in that city.
 
 ### Scenario 1: When user hasn't searched for a specific city, show upcoming events from all cities
 - **Given** user hasn't searched for any city  
@@ -21,6 +27,10 @@
 
 ## Feature 2: Show/Hide Event Details
 
+As a user,
+I should be able to show and hide event details
+So that I can see more or less information about events as needed.
+
 ### Scenario 1: An event element is collapsed by default
 - **Given** the user is on the main page  
 - **When** the user views the list of events  
@@ -39,6 +49,10 @@
 
 ## Feature 3: Specify Number of Events
 
+As a user,
+I should be able to specify the number of events I want to view
+So that I can control the amount of information displayed at once.
+
 ### Scenario 1: When user hasn't specified a number, 10 is the default number
 - **Given** the user has not specified a number of events to display  
 - **When** the user views the event list  
@@ -51,6 +65,10 @@
 
 
 ## Feature 4: Use the App When Offline
+
+As a user,
+I should be able to use the app when offline
+So that I can access event information even without an internet connection.
 
 ### Scenario 1: Show cached data when there's no internet connection
 - **Given** the user has no internet connection  
@@ -65,6 +83,10 @@
 
 ## Feature 5: Add an App Shortcut to the Home Screen
 
+As a user,
+I should be able to add an app shortcut to my device's home screen
+So that I can quickly access the meet app without navigating through a browser.
+
 ### Scenario 1: User can install the meet app as a shortcut on their device home screen
 - **Given** the user is on the meet app website  
 - **When** the user selects the option to add the app to their home screen  
@@ -72,6 +94,10 @@
 
 
 ## Feature 6: Display Charts Visualizing Event Details
+
+As a user,
+I should be able to view charts visualizing event details
+So that I can easily understand event trends and distributions across cities.
 
 ### Scenario 1: Show a chart with the number of upcoming events in each city
 - **Given** the user is on the events page  
