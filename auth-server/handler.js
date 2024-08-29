@@ -36,11 +36,12 @@ module.exports.getAccessToken = async (event) => {
   const code = decodeURIComponent(`${event.pathParameters.code}`);
 
   return new Promise((resolve, reject) => {
-    oAuth2Client.getToken(code, (error, response) => {
+    oAuth2Client.getToken(code, (error, tokens) => {
       if (error) {
         return reject(error);
       }
-      return resolve(response);
+      oAuth2Client.setCredentials(tokens);
+      return resolve(tokens);
     });
   })
     .then((results) => {
