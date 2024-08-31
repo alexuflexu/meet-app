@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Event from '../components/Event';
-import { getEvents } from '../api';
+import { getEvents } from '../mock-data';
 
 describe('<Event /> component', () => {
   let allEvents;
@@ -20,7 +20,6 @@ describe('<Event /> component', () => {
   });
 
   test('renders event start time', () => {
-    // Use the appropriate time property, for example:
     expect(screen.getByText(allEvents[0].start.dateTime)).toBeInTheDocument();
   });
 
@@ -33,7 +32,7 @@ describe('<Event /> component', () => {
   });
 
   test("by default, event's details section should be hidden", () => {
-    const details = screen.queryByText(/event details/i); // More specific if you know what should be in details
+    const details = screen.queryByText(/event details/i); =
     expect(details).not.toBeInTheDocument();
   });
 
