@@ -5,7 +5,7 @@
 ### Scenario 1: When user hasn't searched for a city, show upcoming events from all cities
 * Given user hasn't searched for any city
 * When the user opens the app
-* Then the user should see a list of upcoming events from all cities
+* Then the user should see a list of all upcoming events
 
 ### Scenario 2: User should see a list of suggestions when they search for a city
 * Given the main page is open
