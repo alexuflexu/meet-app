@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Event from '../components/Event';
-import { getEvents } from '../mock-data';
+import { getEvents } from '../api';
 
 describe('<Event /> component', () => {
   let allEvents;
