@@ -1,13 +1,14 @@
-import { render, within } from '@testing-library/react';
+import { render, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
 import App from '../App';
 
 describe('<App /> component', () => {
   let AppDOM;
+
   beforeEach(() => {
     AppDOM = render(<App />).container.firstChild;
-  })
+  });
 
   test('renders list of events', () => {
     expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
@@ -36,12 +37,10 @@ describe('<App /> integration', () => {
     await user.click(berlinSuggestionItem);
 
     const EventListDOM = AppDOM.querySelector('#event-list');
-    const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');   
+    const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
 
     const allEvents = await getEvents();
-    const berlinEvents = allEvents.filter(
-      event => event.location === 'Berlin, Germany'
-    );
+    const berlinEvents = allEvents.filter(event => event.location === 'Berlin, Germany');
 
     expect(allRenderedEventItems.length).toBe(berlinEvents.length);
 
@@ -49,4 +48,24 @@ describe('<App /> integration', () => {
       expect(event.textContent).toContain("Berlin, Germany");
     });
   });
+
+  test('updates the number of events displayed based on user input', async () => {
+    const user = userEvent;
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+    const EventListDOM = AppDOM.querySelector('#event-list');  
+
+    await waitFor(() => {
+      const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+      expect(EventListItems.length).toBe(32);
+    });
+
+    const NumberOfEventsInput = within(AppDOM).getByRole('textbox');
+    await user.type(NumberOfEventsInput, "{backspace}{backspace}10");
+
+    await waitFor(() => {
+      const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+      expect(EventListItems.length).toBe(10);
+    });
+  }); 
 });
