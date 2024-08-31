@@ -43,10 +43,10 @@
 * When the user views the list of events without specifying a number
 * Then 32 events should be displayed by default
 
-### Scenario 2: User can change the number of events they want to see
-* Given the user is viewing the list of events
-* When the user specifies a different number of events to display
-* Then the app should update to show the specified number of events
+### Scenario 2: User can change the number of events displayed
+* Given the user has just opened the app
+* When the user changes the value of the “number of events” input field
+* Then the number of events in the list will change accordingly
 
 ## Feature 4: Use the App When Offline
 
