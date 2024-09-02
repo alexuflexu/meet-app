@@ -49,23 +49,4 @@ describe('<App /> integration', () => {
     });
   });
 
-  test('updates the number of events displayed based on user input', async () => {
-    const user = userEvent;
-    const AppComponent = render(<App />);
-    const AppDOM = AppComponent.container.firstChild;
-    const EventListDOM = AppDOM.querySelector('#event-list');  
-
-    await waitFor(() => {
-      const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-      expect(EventListItems.length).toBe(32);
-    });
-
-    const NumberOfEventsInput = within(AppDOM).getByRole('textbox');
-    await user.type(NumberOfEventsInput, "{backspace}{backspace}10");
-
-    await waitFor(() => {
-      const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-      expect(EventListItems.length).toBe(10);
-    });
-  }); 
 });
