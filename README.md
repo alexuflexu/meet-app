@@ -28,24 +28,24 @@
 
 ### Scenario 2: User can expand an event to see its details
 * Given the user is viewing the list of events in the Meet app
-* When the user clicks on a collapsed event element
-* Then the event element should expand to show its details
+* When the user clicks the show details button
+* Then the event details should expand
 
 ### Scenario 3: User can collapse an event to hide its details
-* Given the user is viewing an expanded event element
-* When the user clicks on the expanded event element
-* Then the event element should collapse to hide its details
+* Given the user has clicked the show details button
+* When the user clicks the hide details button
+* Then the event details should be hidden
 
 ## Feature 3: Specify Number of Events
 
-### Scenario 1: When user hasn't specified a number, 32 is the default number
+### Scenario 1: When user has not specified a number, 32 is the default number
 * Given the user has opened the Meet app
 * When the user views the list of events without specifying a number
 * Then 32 events should be displayed by default
 
 ### Scenario 2: User can change the number of events displayed
 * Given the user has just opened the app
-* When the user changes the value of the “number of events” input field
+* When the user changes the value of the number of events input field
 * Then the number of events in the list will change accordingly
 
 ## Feature 4: Use the App When Offline
