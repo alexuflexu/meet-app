@@ -7,10 +7,10 @@ Scenario: An event element is collapsed by default
 
 Scenario: User can expand an event to see its details
   Given the user is viewing the list of events in the Meet app
-  When the user clicks on a collapsed event element
-  Then the event element should expand to show its details
+  When the user clicks the show details button
+  Then the event details should expand
 
 Scenario: User can collapse an event to hide its details
-  Given the user is viewing an expanded event element
-  When the user clicks on the expanded event element
-  Then the event element should collapse to hide its details
+  Given the user has clicked the show details button
+  When the user clicks the hide details button
+  Then the event details should be hidden

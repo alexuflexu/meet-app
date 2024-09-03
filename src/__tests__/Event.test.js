@@ -32,7 +32,7 @@ describe('<Event /> component', () => {
   });
 
   test("by default, event's details section should be hidden", () => {
-    const details = screen.queryByText(/event details/i); =
+    const details = screen.queryByText(/event details/i);
     expect(details).not.toBeInTheDocument();
   });
 
