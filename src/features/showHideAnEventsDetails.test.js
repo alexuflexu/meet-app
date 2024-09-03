@@ -25,7 +25,7 @@ defineFeature(feature, test => {
 
     then('each event element should be collapsed by default', () => {
       const AppDOM = AppComponent.container.firstChild;
-      const eventDetails = AppDOM.querySelector('.details');
+      const eventDetails = AppDOM.querySelector('event-details');
       expect(eventDetails).not.toBeInTheDocument();
     });
   });
