@@ -17,9 +17,11 @@ const App = () => {
 
   useEffect(() => {
     if (navigator.onLine) {
-      setWarningAlert("");
+      setWarningAlert('');
     } else {
-      setWarningAlert("App is currently offline. Only previously cached events will be shown.");
+      setWarningAlert(
+        'App is currently offline. Only previously cached events will be shown.'
+      );
     }
     fetchData();
   }, [currentCity, currentNOE]);
