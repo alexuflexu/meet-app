@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
-const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+
+  const notify = (msg) => toast.info(msg, {toastId: 'citySearch'});
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
@@ -14,13 +17,12 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
 
-    let infoText;
+    // let infoText;
     if (filteredLocations.length === 0 && value) {
-      infoText = "We cannot find the city you are looking for. Please try another city.";
-    } else {
-      infoText = "";
+      // infoText = "We cannot find the city you are looking for. Please try another city.";
+      notify("We cannot find the city you are looking for. Please try another city.");
     }
-    setInfoAlert(infoText);
+    // setInfoAlert(infoText);
   };
 
   const handleItemClicked = (event) => {
@@ -28,7 +30,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setQuery(value);
     setShowSuggestions(false);
     setCurrentCity(value);
-    setInfoAlert("");
+    // setInfoAlert("");
   };
 
   useEffect(() => {

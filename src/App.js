@@ -6,6 +6,8 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import './App.css';
 
 const App = () => {
@@ -46,18 +48,28 @@ const App = () => {
       </div>
       <CitySearch
       allLocations={allLocations}
-      setCurrentCity={setCurrentCity}
-      setInfoAlert={setInfoAlert} />
+      setCurrentCity={setCurrentCity} />
       <NumberOfEvents 
       currentNOE={currentNOE} 
       setCurrentNOE={setCurrentNOE} 
-      setErrorAlert={setErrorAlert}
       />
       <div className='charts'>
         <EventGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
       <EventList events={events} />
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

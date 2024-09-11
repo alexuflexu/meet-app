@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
-const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
+const NumberOfEvents = ({ setCurrentNOE }) => {
   const [number, setNumber] = useState(32);
+
+  const notify = (msg) => toast.error(msg, {toastId: 'numberOfEvents'});
   
   const handleInputChanged = (event) => {
     const val = event.target.value;
     setNumber(val);
 
     if (val === '' || isNaN(val) || Number(val) <= 0) {
-      setErrorAlert("Only positive numbers are allowed");
+      notify("Only positive numbers are allowed");
+      //setErrorAlert("Only positive numbers are allowed");
       setCurrentNOE(32);
     } else {
-      setErrorAlert("");
+      // setErrorAlert("");
       setCurrentNOE(Number(val));
     }
   };
