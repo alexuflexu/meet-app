@@ -1,4 +1,45 @@
-# Meet App User Stories and Features
+# Meet App
+
+## Project Description
+The Meet App is a serverless progressive web application (PWA) built with React. It allows users to discover upcoming events based on their selected city and preferences. Utilizing the Google Calendar API, the app provides functionalities like filtering events by city, displaying event details, and visualizing data through charts.
+
+## Tech Stack
+- React: Front-end library for building user interfaces.
+- Moment.js: Date manipulation library.
+- Recharts: Charting library for visualizing event data.
+- Workbox: Libraries for handling service workers and offline capabilities.
+- Atatus: Application performance monitoring.
+
+## Dependencies
+The project relies on several npm packages. Below is a list of key dependencies:
+
+- react: Frontend framework
+- moment: Date handling
+- recharts: Charting
+- workbox-*: Service worker utilities
+- react-toastify: Notifications
+- Testing libraries: @testing-library/*
+
+### Installation
+
+## How to Clone
+To clone the repository, run: `git clone https://github.com/alexuflexu/meet-app.git`
+
+## Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+## How to Launch the Project
+To start the development server, use:
+
+   ```sh
+   npm start
+   ```
+This will open the app in your default browser at http://localhost:3000.
+
+### User Stories and Features 
 
 ## Feature 1: Filter Events by City
 
