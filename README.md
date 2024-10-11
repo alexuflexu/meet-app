@@ -39,7 +39,7 @@ To start the development server, use:
    ```
 This will open the app in your default browser at http://localhost:3000.
 
-### User Stories and Features 
+## User Stories and Features 
 
 ## Feature 1: Filter Events by City
 
