@@ -121,3 +121,10 @@ This will open the app in your default browser at http://localhost:3000.
 * Given the user is in the charts section of the Meet app
 * When the user selects the event genre visualization
 * Then a pie chart displaying the popularity of event genres should be shown
+
+## Offline Functionality
+The Meet app supports offline functionality:
+
+- When offline, the app will display previously loaded event data.
+- Users can still view event details and any cached information.
+- Filtering by a new city or updating event data requires an internet connection.
